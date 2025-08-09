@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medicine Inventory</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Medicine Inventory</h1>
+    <input type="search" id="search" placeholder="Search medicines..." />
+  </header>
+
+  <main>
+    <ul id="medicine-list"></ul>
+  </main>
+
+  <button id="add-btn" title="Add Medicine">＋</button>
+
+  <div id="modal" class="modal hidden">
+    <form id="medicine-form">
+      <h2 id="form-title">Add Medicine</h2>
+      <label>
+        Name
+        <input type="text" id="name" required />
+      </label>
+      <label>
+        Category
+        <input type="text" id="category" />
+      </label>
+      <label>
+        Location
+        <input type="text" id="location" />
+      </label>
+      <label>
+        Quantity
+        <input type="number" id="quantity" min="0" value="0" />
+      </label>
+      <label>
+        Expiry Date
+        <input type="date" id="expiry" />
+      </label>
+      <div class="form-buttons">
+        <button type="submit">Save</button>
+        <button type="button" id="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="overlay" class="hidden"></div>
+</body>
+</html>

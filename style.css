@@ -1,0 +1,208 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f0f4f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #1976d2;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+#search {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: none;
+  outline: none;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+#medicine-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#medicine-list li {
+  background: white;
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.medicine-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.medicine-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1976d2;
+}
+
+.medicine-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  color: #1976d2;
+  transition: color 0.3s ease;
+}
+
+.medicine-actions button:hover {
+  color: #004ba0;
+}
+
+.medicine-details {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#add-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #1976d2;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.2);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 20;
+}
+
+#add-btn:hover {
+  background: #004ba0;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.15);
+  z-index: 100;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.modal form input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-top: 0.3rem;
+  box-sizing: border-box;
+}
+
+.modal form input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 5px #1976d2aa;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-buttons button {
+  background: #1976d2;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.form-buttons button:hover {
+  background: #004ba0;
+}
+
+.form-buttons #cancel-btn {
+  background: #aaa;
+}
+
+.form-buttons #cancel-btn:hover {
+  background: #666;
+}
+
+/* Overlay for modal */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0 0 0 / 0.5);
+  z-index: 50;
+}
+
+@media (min-width: 600px) {
+  #medicine-list li {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
